@@ -1,5 +1,15 @@
+import 'package:englisch_lern_app/screens/splash-screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
+
+const primColor =  Color(0xFFFF8888);
+const secColor = Color(0xFFFFBF84);
+const lightColor = Color(0xFFFFF1AD);
+const corransColor = Color(0xFFB2EEA8);
+const blueColor = Color(0xFFA6EAF0);
+
+
+
 
 void main() => runApp(MyApp());
 
@@ -10,13 +20,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
-        //primarySwatch: Colors.blue,
-        //primaryColor: const Color(0xFF062369),
-        primaryColor: const Color(0xFFFF8888),
-        accentColor: const Color(0xFFBF84),
+        primaryColor: primColor,
+        accentColor: secColor,
+        fontFamily: 'Century Gothic',
       ),
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }
