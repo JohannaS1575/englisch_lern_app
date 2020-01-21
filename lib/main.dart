@@ -1,6 +1,7 @@
 import 'package:englisch_lern_app/screens/splash-screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
+import 'screens/übersicht_screen.dart';
 
 const primColor =  Color(0xFFFF8888);
 const secColor = Color(0xFFFFBF84);
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         accentColor: secColor,
         fontFamily: 'Century Gothic',
       ),
-      home: SplashScreen(),
+      home: UebersichtScreen(),
     );
   }
 }
