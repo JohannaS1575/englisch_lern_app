@@ -1,5 +1,6 @@
 import 'package:englisch_lern_app/screens/quiz_screen.dart';
 import 'package:englisch_lern_app/screens/splash-screen.dart';
+import 'package:englisch_lern_app/screens/uebersicht-vokabeln.dart';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 import 'screens/übersicht_screen.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         accentColor: secColor,
         fontFamily: 'Century Gothic',
       ),
-      home: Quiz(),
+      home: VokUebersicht(),
     );
   }
 }
