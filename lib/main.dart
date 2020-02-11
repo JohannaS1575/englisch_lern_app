@@ -25,6 +25,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: primColor,
         accentColor: secColor,
+        textTheme: TextTheme(
+
+        ),
         fontFamily: 'Century Gothic',
       ),
       home: VokUebersicht(),
