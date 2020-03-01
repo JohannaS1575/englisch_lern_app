@@ -30,7 +30,14 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: 'Century Gothic',
       ),
-      home: VokUebersicht(),
+      initialRoute: '/home',
+      routes: {
+        '/': (context) => SplashScreen(),
+        '/home': (context) => HomeScreen(),
+        '/vokuebersicht': (context) => VokUebersicht(),
+        '/grammaruebersicht': (context) => UebersichtScreen(),
+
+      },
     );
   }
 }
