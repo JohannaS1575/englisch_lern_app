@@ -1,3 +1,4 @@
+import 'package:englisch_lern_app/screens/eigene_vokabeln.dart';
 import 'package:englisch_lern_app/screens/quiz_screen.dart';
 import 'package:englisch_lern_app/screens/splash-screen.dart';
 import 'package:englisch_lern_app/screens/uebersicht-vokabeln.dart';
@@ -30,12 +31,14 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: 'Century Gothic',
       ),
-      initialRoute: '/home',
+      initialRoute: '/eigeneVok',
       routes: {
         '/': (context) => SplashScreen(),
         '/home': (context) => HomeScreen(),
         '/vokuebersicht': (context) => VokUebersicht(),
         '/grammaruebersicht': (context) => UebersichtScreen(),
+        '/quiz': (context) => Quiz(),
+        '/eigeneVok': (context) => VokList()
 
       },
     );
