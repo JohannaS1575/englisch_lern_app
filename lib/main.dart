@@ -1,10 +1,11 @@
 import 'package:englisch_lern_app/screens/eigene_vokabeln.dart';
+import 'package:englisch_lern_app/screens/quiz1.dart';
 import 'package:englisch_lern_app/screens/quiz_screen.dart';
 import 'package:englisch_lern_app/screens/splash-screen.dart';
 import 'package:englisch_lern_app/screens/uebersicht-vokabeln.dart';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
-import 'screens/übersicht_screen.dart';
+import 'screens/uebersicht_screen.dart';
 
 const primColor =  Color(0xFFFF8888);
 const secColor = Color(0xFFFFBF84);
@@ -31,14 +32,16 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: 'Century Gothic',
       ),
-      initialRoute: '/vokuebersicht',
+      initialRoute: '/quiz1',
       routes: {
         '/': (context) => SplashScreen(),
         '/home': (context) => HomeScreen(),
         '/vokuebersicht': (context) => VokUebersicht(),
         '/grammaruebersicht': (context) => UebersichtScreen(),
         '/quiz': (context) => Quiz(),
+        '/quiz1': (context) => Quiz1(),
         '/eigeneVok': (context) => VokList()
+
 
       },
     );

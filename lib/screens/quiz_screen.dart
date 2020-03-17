@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:englisch_lern_app/screens/quiz1.dart';
 
 class Quiz extends StatefulWidget {
   @override
@@ -19,10 +20,9 @@ class _QuizState extends State<Quiz> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-
             MaterialButton(
               height: 50.0,
-              color: Colors.grey,
+              color: Colors.red,
               onPressed: null,
               child: Text("Quiz 1",
               style: TextStyle(
@@ -33,6 +33,19 @@ class _QuizState extends State<Quiz> {
           ],
         ),
       ),
+
     );
   }
+
+  // Method to start quiz
+void startQuiz(){
+    setState(() {
+      // Navigator.push(context, MaterialPageRoute(builder: (context)=> Quiz1));
+    });
+}
+
+
+
+
+
 }
