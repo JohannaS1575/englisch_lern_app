@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/detailsFrammarScreen';
+// import 'package:englisch_lern_app/screens/detailsGrammarScreen.dart';
 
 class UebersichtScreen extends StatefulWidget {
   @override
@@ -157,7 +157,7 @@ class _UebersichtScreenState extends State<UebersichtScreen> {
       child: InkWell(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-             builder: (context) => GrammaDetail(heroTag: imgPath, foodName: foodName, foodPrice: price)
+            // builder: (context) => GrammaDetail(heroTag: imgPath, foodName: foodName, foodPrice: price)
 
           ));
 
