@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/detailsFrammarScreen';
 
 class UebersichtScreen extends StatefulWidget {
   @override
@@ -156,7 +157,7 @@ class _UebersichtScreenState extends State<UebersichtScreen> {
       child: InkWell(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-             // builder: (context) => DetailsScreen(heroTag: imgPath, foodName: foodName, foodPrice: price)
+             builder: (context) => GrammaDetail(heroTag: imgPath, foodName: foodName, foodPrice: price)
 
           ));
 
