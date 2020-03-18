@@ -68,7 +68,6 @@ class _VokUebersichtState extends State<VokUebersicht> {
             ),
           )
         ],
-        //inhalt.map((headlines) => themaCards(headlines)).toList(),
       ),
     );
   }

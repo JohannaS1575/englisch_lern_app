@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../main.dart';
+
 class VokList extends StatefulWidget {
   @override
   _VokListState createState() => _VokListState();
@@ -26,7 +28,12 @@ class _VokListState extends State<VokList> {
           ]),
         ],
       ),
-
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/addtableentry');
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
 }

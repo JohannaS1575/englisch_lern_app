@@ -1,3 +1,4 @@
+import 'package:englisch_lern_app/screens/add-entry.dart';
 import 'package:englisch_lern_app/screens/eigene_vokabeln.dart';
 import 'package:englisch_lern_app/screens/quiz1.dart';
 import 'package:englisch_lern_app/screens/quiz_screen.dart';
@@ -41,8 +42,8 @@ class MyApp extends StatelessWidget {
         //'/grammaruebersicht': (context) => UebersichtScreen(),
         '/quiz': (context) => Quiz(),
         '/quiz1': (context) => Quiz1(),
-        '/eigeneVok': (context) => VokList()
-
+        '/eigeneVok': (context) => VokList(),
+        '/addtableentry': (context) => TableEntry()
 
       },
     );
