@@ -205,7 +205,7 @@ class _Quiz1State extends State<Quiz1> {
                 child: MaterialButton(
                   color: Colors.red,
                   minWidth: 240.0,
-                  height: 30.0,
+                  height: 40.0,
                   onPressed: resetQuiz,
                   child: Text ("Quit",
                   style: TextStyle(
@@ -244,23 +244,45 @@ class _Quiz1State extends State<Quiz1> {
 }
 
 
-class Summary extends StatelessWidget{
+class Summary extends StatelessWidget {
   final int score;
-  Summary({Key key, @required this.score}) : super(key : key);
+
+  Summary({Key key, @required this.score}) : super(key: key);
 
 
   @override
-    Widget build(BuildContext context) {
-      return WillPopScope(
-        onWillPop: ()async => false,
+  Widget build(BuildContext context) {
+    return WillPopScope(
+        onWillPop: () async => false,
         child: Scaffold(
 
-          body: Text ("Hi"),
+            body: Container(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
 
-        ),
-      );
+                    Text("Final Score: $score",
+                      style: TextStyle(
+                          fontSize: 25.0
+                      ),),
+
+                    Padding(padding: EdgeInsets.all(10.0)),
+
+                    MaterialButton(
+                      color: Colors.red,
+                      onPressed: () {
+                        questionNumber = 0;
+                        finalScore = 0;
+                        Navigator.pop(context);
+                      },
+                      child: Text("Reset Quiz"),
+
+                    ),
+                  ]
+              ),
+            )
+        )
+    );
   }
 
 }
-
-
