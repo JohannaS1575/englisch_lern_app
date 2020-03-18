@@ -3,24 +3,24 @@ import 'package:flutter/material.dart';
 
 class EnglishQuiz{
 
-  var images = ["familie-card", "tiere-card", "verben-card", "essen-card"];
+  var images = ["quizbild1", "quizbild2", "quizbild3", "quizbild4"];
 
   var questions = [
-    "Was ist das und das? 1",
+    "I would go to this restaurant if you ___ me.",
     "Was ist dies und das? 2",
     "Was ist das? 3",
     "Was ist das? 4"
   ];
 
   var choices = [
-    ["Antwort 1", "Antwort 2", "Antwort3", "Antwort4"],
+    ["asked", "have asked", "had asked", "ask"],
     ["Antwort 1", "Antwort 2", "Antwort3", "Antwort4"],
     ["Antwort 1", "Antwort 2", "Antwort3", "Antwort4"],
     ["Antwort 1", "Antwort 2", "Antwort3", "Antwort4"],
   ];
 
   var correctAnswers = [
-    "Antwort 1", "Antwort 2", "Antwort3", "Antwort4"
+    "asked", "Antwort 2", "Antwort3", "Antwort4"
   ];
 
 }
@@ -61,13 +61,13 @@ class _Quiz1State extends State<Quiz1> {
                     Text("Question ${questionNumber + 1} of ${quiz.questions
                         .length}",
                       style: TextStyle(
-                          fontSize: 22.0
+                          fontSize: 16.0
                       ),
                     ),
 
                     Text("Score: $finalScore",
                       style: TextStyle(
-                          fontSize: 22.0
+                          fontSize: 16.0
                       ),
                     ),
                   ],
@@ -88,7 +88,7 @@ class _Quiz1State extends State<Quiz1> {
                 ),
               ),
 
-              Padding(padding: EdgeInsets.all(10.0)),
+              Padding(padding: EdgeInsets.all(30.0)),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -96,8 +96,15 @@ class _Quiz1State extends State<Quiz1> {
 
                   // Button 1
                   MaterialButton(
-                    minWidth: 120.0,
-                    color: Colors.amber,
+                    minWidth: 160.0,
+                    color: Colors.white70,
+                    height: 50.0,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(7.0),
+                        side: BorderSide(color: Colors.black, width: 2.0)
+                    ),
+
+
                     onPressed: () {
 
                       if(quiz.choices[questionNumber][0] == quiz.correctAnswers[questionNumber]){
@@ -119,8 +126,14 @@ class _Quiz1State extends State<Quiz1> {
 
                   // Button 2
                   MaterialButton(
-                    minWidth: 120.0,
-                    color: Colors.amber,
+                    minWidth: 160.0,
+                    color: Colors.white70,
+                    height: 50.0,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(7.0),
+                        side: BorderSide(color: Colors.black, width: 2.0)
+                    ),
+
                     onPressed: () {
 
                       if(quiz.choices[questionNumber][1] == quiz.correctAnswers[questionNumber]){
@@ -151,8 +164,14 @@ class _Quiz1State extends State<Quiz1> {
 
                   // Button 3
                   MaterialButton(
-                    minWidth: 120.0,
-                    color: Colors.amber,
+                    minWidth: 160.0,
+                    color: Colors.white70,
+                    height: 50.0,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(7.0),
+                        side: BorderSide(color: Colors.black, width: 2.0)
+                    ),
+
                     onPressed: () {
 
                       if(quiz.choices[questionNumber][2] == quiz.correctAnswers[questionNumber]){
@@ -174,8 +193,14 @@ class _Quiz1State extends State<Quiz1> {
 
                   // Button 4
                   MaterialButton(
-                    minWidth: 120.0,
-                    color: Colors.amber,
+                    minWidth: 160.0,
+                    color: Colors.white70,
+                    height: 50.0,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(7.0),
+                        side: BorderSide(color: Colors.black, width: 2.0)
+                    ),
+
                     onPressed: () {
 
                       if(quiz.choices[questionNumber][3] == quiz.correctAnswers[questionNumber]){
@@ -198,7 +223,7 @@ class _Quiz1State extends State<Quiz1> {
                 ],
               ),
 
-              Padding(padding: EdgeInsets.all(10.0)),
+              Padding(padding: EdgeInsets.all(25.0)),
 
               Container(
                 alignment: Alignment.bottomCenter,
@@ -268,21 +293,30 @@ class Summary extends StatelessWidget {
 
                     Padding(padding: EdgeInsets.all(10.0)),
 
-                    MaterialButton(
-                      color: Colors.red,
-                      onPressed: () {
+                   Container(
+                      alignment: Alignment.bottomCenter,
+                      child: MaterialButton(
+                        color: Color(0xFFFF8888),
+                        onPressed: () {
                         questionNumber = 0;
                         finalScore = 0;
                         Navigator.pop(context);
-                      },
-                      child: Text("Reset Quiz"),
+                        },
+                        child: Text("Reset Quiz",
+                          style: TextStyle(
+                          fontSize: 25.0,
+                          color: Colors.white
+                          ),),
+                      )
+                   ),
+                ],
+              )
 
-                    ),
-                  ]
-              ),
-            )
+
+            ),
         )
     );
+
   }
 
 }
