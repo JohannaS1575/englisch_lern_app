@@ -7,20 +7,20 @@ class EnglishQuiz{
 
   var questions = [
     "I would go to this restaurant if you ___ me.",
-    "Was ist dies und das? 2",
-    "Was ist das? 3",
-    "Was ist das? 4"
+    "I _____ in another city if I had the chance.",
+    "What's the participle of 'steal'?",
+    "Let's meet ___ the front door."
   ];
 
   var choices = [
     ["asked", "have asked", "had asked", "ask"],
-    ["Antwort 1", "Antwort 2", "Antwort3", "Antwort4"],
-    ["Antwort 1", "Antwort 2", "Antwort3", "Antwort4"],
-    ["Antwort 1", "Antwort 2", "Antwort3", "Antwort4"],
+    ["live", "have lived", "would live", "life"],
+    ["stole", "stealed", "stolen", "stoled"],
+    ["at", "in", "on", "below"],
   ];
 
   var correctAnswers = [
-    "asked", "Antwort 2", "Antwort3", "Antwort4"
+    "asked", "would live", "stolen", "at"
   ];
 
 }
