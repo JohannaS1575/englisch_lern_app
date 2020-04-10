@@ -1,11 +1,27 @@
+import 'package:englisch_lern_app/screens/klassen.dart';
 import 'package:flutter/material.dart';
 
 class TableEntry extends StatefulWidget {
+  final vokEntries entries;
+  const TableEntry({Key key, this.entries}) : super(key: key);
+
   @override
   _TableEntryState createState() => _TableEntryState();
 }
 
 class _TableEntryState extends State<TableEntry> {
+  vokEntries entries;
+  final enTextController = TextEditingController();
+  final deTextController = TextEditingController();
+  final koTextController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    enTextController.dispose();
+    deTextController.dispose();
+    koTextController.dispose();
+  }
 
   String vokEnglisch;
   String vokDeutsch;
@@ -17,15 +33,14 @@ class _TableEntryState extends State<TableEntry> {
   Widget entextfield() {
     return TextFormField(
       decoration: InputDecoration(labelText: 'Englisch'),
+
       validator: (String value) {
         if (value.isEmpty) {
           return required;
         }
         return null;
       },
-      onSaved: (String value) {
-        vokEnglisch = value;
-      },
+      controller: enTextController,
     );
   }
 
@@ -38,18 +53,14 @@ class _TableEntryState extends State<TableEntry> {
         }
         return null;
       },
-      onSaved: (String value) {
-        vokDeutsch = value;
-      },
+      controller: deTextController,
     );
   }
 
   Widget kotextfield() {
     return TextFormField(
       decoration: InputDecoration(labelText: 'Kommentar'),
-      onSaved: (String value) {
-        vokKommentar = value;
-      },
+      controller: koTextController,
     );
   }
 
@@ -77,19 +88,22 @@ class _TableEntryState extends State<TableEntry> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          //kommt noch
-          if(!_formKey.currentState.validate()) {
-            return;
-          }
-          _formKey.currentState.save();
-          //zum testen
-          print(vokEnglisch);
-          print(vokDeutsch);
-          print(vokKommentar);
-        },
         child: Icon(Icons.save),
+        onPressed: () {
+          DatabaseHelper().insertVok(vokEntries(
+            vok_en: enTextController.text,
+            vok_de: deTextController.text,
+            vok_ko: koTextController.text,));
+
+        },
       ),
     );
   }
 }
+
+/*_saveVok(String en, String de, String ko) async {
+  if (vokEntries == )
+
+}
+
+*/

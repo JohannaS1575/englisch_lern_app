@@ -11,10 +11,10 @@ class cardInhalt {
 }
 
 class vokEntries {
-  int id;
-  String vok_en;
-  String vok_de;
-  String vok_ko;
+  final int id;
+  final String vok_en;
+  final String vok_de;
+  final String vok_ko;
   static const String TABLENAME = "eigenevok";
 
   vokEntries({this.id, this.vok_en, this.vok_de, this.vok_ko});
@@ -28,6 +28,7 @@ class DatabaseHelper {
 
   //Create a private constructor
   DatabaseHelper._();
+  DatabaseHelper() : super();
 
   static const databaseName = 'eigenevok_database.db';
   static final DatabaseHelper instance = DatabaseHelper._();
@@ -46,6 +47,12 @@ class DatabaseHelper {
           await db.execute(
               "CREATE TABLE eigenevok(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, englisch TEXT, deutsch TEXT, kommentar TEXT)");
         });
+  }
+
+  insertVok(vokEntries entries) async {
+    final db = await database;
+    var res = await db.insert(vokEntries.TABLENAME, vokEntries().toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
+    return res;
   }
 
 }
