@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:englisch_lern_app/screens/detailsGrammarScreen.dart';
+import 'package:englisch_lern_app/screens/detailsGrammarScreen.dart';
 
 class UebersichtScreen extends StatefulWidget {
   @override
