@@ -1,85 +1,56 @@
 import 'package:flutter/material.dart';
 
-class GrammarUebersicht extends StatefulWidget {
-  @override
-  _GrammarUebersichtState createState() => _GrammarUebersichtState();
-}
-
-class cardInhalt1 {
-
-  String image;
-  String title;
-  String route;
-
-  cardInhalt1({ this.image, this.title, this.route });
-}
-
-class _GrammarUebersichtState extends State<GrammarUebersicht> {
-
-  List<cardInhalt1> inhalt1 = [
-    cardInhalt1(image: 'assets/images/vokabeln.png', title: 'Grammatik', route: '/eigeneVok'),
-    cardInhalt1(image: 'assets/images/familie-card.jpg', title: 'Grammatik', route: '/grammaruebersicht'),
-    cardInhalt1(image: 'assets/images/zahlen-card.jpg', title: 'Quiz', route: '/quiz1'),
-    cardInhalt1(image: 'assets/images/tiere-card.jpg', title: 'Tiere', route: '/eigeneVok'),
-    cardInhalt1(image: 'assets/images/verben-card.jpg', title: 'Verben', route: '/eigeneVok'),
-    cardInhalt1(image: 'assets/images/essen-card.jpg', title: 'Essen', route: '/eigeneVok'),
-    cardInhalt1(image: 'assets/images/reisen-card.jpeg', title: 'Reisen', route: '/eigeneVok')
-  ];
-
-  Widget themaCards(headlines) {
-    return InkWell(
-      onTap: () {
-        Navigator.pushNamed(context, headlines.route);
-      },
-      child: Card(
-        margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Image.asset(
-              headlines.image,
-              width: 50,
-              height: 150,
-              fit: BoxFit.cover,
-            ),
-            SizedBox(height: 5.0),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Text(
-                headlines.title,
-                style: TextStyle(
-                  fontSize: 16.0,
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
+class GrammarUebersicht extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Overview"),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Grammatikübersicht',
+      theme: ThemeData(
+        primaryColor: Color(0xFFFF8888),
       ),
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverPadding(
-            padding: const EdgeInsets.all(5),
-            sliver: SliverGrid.count(
-              crossAxisSpacing: 0,
-              mainAxisSpacing: 15,
-              crossAxisCount: 1,
-              children: inhalt1.map((headlines) => themaCards(headlines)).toList(),
-            ),
-          )
-        ],
+      home: Scaffold(
+        appBar: AppBar(title: Text('ListViews')),
+        body: BodyLayout(),
       ),
     );
   }
 }
 
+class BodyLayout extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return _myListView(context);
+  }
+}
 
+Widget _myListView(BuildContext context) {
+
+  final titles = ['Quiz', 'Englisch A1', 'Englisch A2', 'Englisch B1', 'Englisch B2',
+    'Englisch C1', 'Englisch C2'];
+
+  final icons = [Icons.laptop_chromebook, Icons.library_books,
+    Icons.collections_bookmark, Icons.book, Icons.library_books,
+    Icons.collections_bookmark, Icons.book];
+
+  final subtitle = ['Teste dein Wissen', 'Basiswissen', 'Bassiswissen', "Fortgeschritten",
+    "Fortgeschritten", "Expertenwissen", "Expertenwissen"];
+
+  return ListView.builder(
+    itemCount: titles.length,
+    itemBuilder: (context, index) {
+      return Card( //                           <-- Card widget
+        child: ListTile(
+          leading: Icon(icons[index], color: Color(0xFFFFBF84)),
+          title: Text(titles[index]),
+          subtitle: Text(subtitle[index]),
+          trailing: Icon(Icons.arrow_forward_ios),
+           // onTap: () {
+           //   Navigator.of(context).pushNamed('/quiz');
+           // }
+        ),
+      );
+    },
+  );
+}
 
