@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: 'Century Gothic',
       ),
-      initialRoute: '/grammaruebersicht',
+      initialRoute: '/',
       routes: {
         '/': (context) => SplashScreen(),
         '/home': (context) => HomeScreen(),

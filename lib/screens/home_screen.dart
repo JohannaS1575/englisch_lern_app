@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:englisch_lern_app/screens/uebersicht-vokabeln.dart';
+import 'package:englisch_lern_app/screens/uebersicht_grammar.dart';
+
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -59,7 +62,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: <Widget>[
                               FlatButton(
                                 child: const Text('Vokabeln'),
-                                onPressed: () { /* ... */ },
+                                onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>VokUebersicht()));
+                                },
                               ),
                             ],
                           ),
@@ -82,7 +87,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: <Widget>[
                               FlatButton(
                                 child: const Text('Grammatik'),
-                                onPressed: () { /* ... */ },
+                                onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> GrammarUebersicht()));
+                                },
                               ),
                             ],
                           ),
