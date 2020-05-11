@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         '/quiz': (context) => Quiz(),
         '/quiz1': (context) => Quiz1(),
         '/eigeneVok': (context) => VokList(),
-        '/addtableentry': (context) => TableEntry()
+        '/addtableentry': (context) => TableEntry(),
 
       },
     );
