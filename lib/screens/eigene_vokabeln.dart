@@ -1,4 +1,5 @@
 import 'package:englisch_lern_app/database/databasehelper.dart';
+import 'package:englisch_lern_app/screens/add-entry.dart';
 import 'package:flutter/material.dart';
 
 import 'klassen.dart';
@@ -28,7 +29,7 @@ class _VokListState extends State<VokList> {
                   title: Text(snapshot.data[index].vok_en),
                   //leading: Text(snapshot.data[index].id.toString()),
                   subtitle: Text(snapshot.data[index].vok_de),
-                  //onTap: () => _navigateToDetail(context, snapshot.data[index]),
+                  onTap: () => _navigateToDetail(context, snapshot.data[index]),
                   trailing: IconButton(
                       alignment: Alignment.center,
                       icon: Icon(Icons.delete),
@@ -60,10 +61,9 @@ _deleteVok(vokEntries entries) {
   DatabaseHelper.instance.deleteEntry(entries.id);
 }
 
-/*_navigateToDetail(BuildContext context, vokEntries entries ) async {
+_navigateToDetail(BuildContext context, vokEntries entries ) async {
   Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => DetailTodoScreen(todo: todo)),
+    MaterialPageRoute(builder: (context) => addVok(entries: entries,)),
   );
 }
-*/
