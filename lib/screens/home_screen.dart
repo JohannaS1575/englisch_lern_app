@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=> VokUebersicht()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> GrammarUebersicht()));
                           },
                           child: Padding (
                             padding: EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 0.0),

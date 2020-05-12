@@ -1,7 +1,8 @@
 import 'package:englisch_lern_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:englisch_lern_app/screens/uebersicht-vokabeln.dart';
-
+import 'package:englisch_lern_app/screens/details_grammar.dart';
+import 'package:englisch_lern_app/screens/quiz1.dart';
 
 class GrammarUebersicht extends StatelessWidget {
   @override
@@ -49,7 +50,7 @@ class GrammarUebersicht extends StatelessWidget {
                               // color: Colors.brown[900],
                             ),
                             onPressed: () {
-                              //Navigator.pushNamed(context, BuildContext.route);
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Quiz1()));
                             },
                           ),
                         ),
@@ -68,7 +69,7 @@ class GrammarUebersicht extends StatelessWidget {
                               // color: Colors.brown[900],
                             ),
                             onPressed: () {
-                              //Navigator.pushNamed(context, BuildContext.route);
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailScreen()));
                             },
                           ),
                         ),
@@ -88,7 +89,7 @@ class GrammarUebersicht extends StatelessWidget {
                               // color: Colors.brown[900],
                             ),
                             onPressed: () {
-                              //Navigator.pushNamed(context, BuildContext.route);
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>VokUebersicht()));
                             },
                           ),
                         ),
@@ -107,7 +108,7 @@ class GrammarUebersicht extends StatelessWidget {
                               // color: Colors.brown[900],
                             ),
                             onPressed: () {
-                              //Navigator.pushNamed(context, BuildContext.route);
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>VokUebersicht()));
                             },
                           ),
                         ),
@@ -126,7 +127,7 @@ class GrammarUebersicht extends StatelessWidget {
                               // color: Colors.brown[900],
                             ),
                             onPressed: () {
-                              //Navigator.pushNamed(context, BuildContext.route);
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>VokUebersicht()));
                             },
                           ),
                         ),
@@ -145,7 +146,7 @@ class GrammarUebersicht extends StatelessWidget {
                               // color: Colors.brown[900],
                             ),
                             onPressed: () {
-                              //Navigator.pushNamed(context, BuildContext.route);
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>VokUebersicht()));
                             },
                           ),
                         ),
@@ -164,7 +165,7 @@ class GrammarUebersicht extends StatelessWidget {
                               // color: Colors.brown[900],
                             ),
                             onPressed: () {
-                              //Navigator.pushNamed(context, BuildContext.route);
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>VokUebersicht()));
                             },
                           ),
                         ),
