@@ -1,3 +1,4 @@
+import 'package:englisch_lern_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:englisch_lern_app/screens/uebersicht-vokabeln.dart';
 
@@ -11,7 +12,20 @@ class GrammarUebersicht extends StatelessWidget {
         primaryColor: Color(0xFFFF8888),
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('Grammatikübersicht')),
+        appBar: AppBar(
+            leading: IconButton(
+              icon: Icon(
+                Icons.arrow_back,
+               // size: 20.0,
+              ),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+              },
+            ),
+
+            title: Text('Grammatikübersicht')
+
+        ),
         body: BodyLayout(),
       ),
     );
