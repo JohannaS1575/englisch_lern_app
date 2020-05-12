@@ -4,7 +4,7 @@ import 'package:englisch_lern_app/screens/quiz1.dart';
 import 'package:englisch_lern_app/screens/quiz_screen.dart';
 import 'package:englisch_lern_app/screens/splash-screen.dart';
 import 'package:englisch_lern_app/screens/uebersicht-vokabeln.dart';
-import 'package:englisch_lern_app/screens/uebersicht_grammar.dart';
+//import 'package:englisch_lern_app/screens/uebersicht-screen';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 
@@ -34,16 +34,16 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: 'Century Gothic',
       ),
-      initialRoute: '/grammaruebersicht',
+      initialRoute: '/vokuebersicht',
       routes: {
         '/': (context) => SplashScreen(),
         '/home': (context) => HomeScreen(),
         '/vokuebersicht': (context) => VokUebersicht(),
-        '/grammaruebersicht': (context) => GrammarUebersicht(),
+        //'/grammaruebersicht': (context) => UebersichtScreen(),
         '/quiz': (context) => Quiz(),
         '/quiz1': (context) => Quiz1(),
         '/eigeneVok': (context) => VokList(),
-        '/addtableentry': (context) => TableEntry()
+        '/addtableentry': (context) => addVok()
 
       },
     );
