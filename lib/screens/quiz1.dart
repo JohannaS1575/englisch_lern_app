@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:englisch_lern_app/screens/uebersicht_grammar.dart';
 
 class EnglishQuiz{
 
@@ -302,11 +303,26 @@ class Summary extends StatelessWidget {
                         finalScore = 0;
                         Navigator.pop(context);
                         },
-                        child: Text("Reset Quiz",
+                      /*  child: Text("Reset Quiz",
                           style: TextStyle(
                           fontSize: 25.0,
                           color: Colors.white
                           ),),
+
+                       */
+                        child: MaterialButton(
+                          color: Colors.red,
+                          minWidth: 240.0,
+                          height: 40.0,
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> GrammarUebersicht()));
+                          },
+                          child: Text ("Quit",
+                            style: TextStyle(
+                                fontSize: 18.0,
+                                color: Colors.white
+                            ),),
+                        ),
                       )
                    ),
                 ],
@@ -318,5 +334,6 @@ class Summary extends StatelessWidget {
     );
 
   }
+
 
 }
