@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:englisch_lern_app/screens/uebersicht-vokabeln.dart';
-import 'package:englisch_lern_app/screens/uebersicht_grammar.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -10,6 +8,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +29,100 @@ class _HomeScreenState extends State<HomeScreen> {
             Icon(Icons.person),
           ],
         ),
-        body: ListView.builder(
+        body: Column (
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
+              child: Text(
+                "Willkommen Max Mustermann",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 20.0),
+              child: Text(
+                "Schön, dass du da bist.\nWas möchtest du heute tun?",
+                textAlign: TextAlign.center,
+
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+
+            InkWell (
+              onTap: () {
+                Navigator.pushNamed(context, '/vokuebersicht');
+              },
+              child: Card(
+                margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/vokabeln.png',
+                      width: 50,
+                      height: 160,
+                      fit: BoxFit.cover,
+                    ),
+                    SizedBox(height: 5.0),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        'Vokabeln',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+
+            SizedBox(height: 10),
+
+            InkWell (
+              onTap: () {
+                Navigator.pushNamed(context, '/grammaruebersicht');
+              },
+              child: Card(
+                margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/grammar.png',
+                      width: 50,
+                      height: 160,
+                      fit: BoxFit.cover,
+                    ),
+                    SizedBox(height: 5.0),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        'Grammatik',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            )
+
+          ],
+        )
+
+
+      /*ListView.builder(
 
             itemBuilder: (context, index) {
               const EdgeInsets.all(8.0);
@@ -156,7 +248,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ]
               );
             }
-        )
+        )*/
     );
   }
 }
