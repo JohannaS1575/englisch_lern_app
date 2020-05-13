@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: 'Century Gothic',
       ),
-      initialRoute: '/',
+      initialRoute: '/quiz1',
       routes: {
         '/': (context) => SplashScreen(),
         '/home': (context) => HomeScreen(),

@@ -46,6 +46,7 @@ class _Quiz1State extends State<Quiz1> {
       child: Scaffold(
 
         body: new Container(
+          color: Colors.white,
           margin: const EdgeInsets.all(10.0),
           alignment: Alignment.topCenter,
           child: Column(
@@ -98,11 +99,11 @@ class _Quiz1State extends State<Quiz1> {
                   // Button 1
                   MaterialButton(
                     minWidth: 160.0,
-                    color: Colors.white70,
+                    color: Colors.white,
                     height: 50.0,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(7.0),
-                        side: BorderSide(color: Colors.black, width: 2.0)
+                        side: BorderSide(color: Color(0xFFFFBF84), width: 2.0)
                     ),
 
 
@@ -128,11 +129,11 @@ class _Quiz1State extends State<Quiz1> {
                   // Button 2
                   MaterialButton(
                     minWidth: 160.0,
-                    color: Colors.white70,
+                    color: Colors.white,
                     height: 50.0,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(7.0),
-                        side: BorderSide(color: Colors.black, width: 2.0)
+                        side: BorderSide(color: Color(0xFFFFBF84), width: 2.0)
                     ),
 
                     onPressed: () {
@@ -166,11 +167,11 @@ class _Quiz1State extends State<Quiz1> {
                   // Button 3
                   MaterialButton(
                     minWidth: 160.0,
-                    color: Colors.white70,
+                    color: Colors.white,
                     height: 50.0,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(7.0),
-                        side: BorderSide(color: Colors.black, width: 2.0)
+                        side: BorderSide(color: Color(0xFFFFBF84), width: 2.0)
                     ),
 
                     onPressed: () {
@@ -195,11 +196,11 @@ class _Quiz1State extends State<Quiz1> {
                   // Button 4
                   MaterialButton(
                     minWidth: 160.0,
-                    color: Colors.white70,
+                    color: Colors.white,
                     height: 50.0,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(7.0),
-                        side: BorderSide(color: Colors.black, width: 2.0)
+                        side: BorderSide(color: Color(0xFFFFBF84), width: 2.0)
                     ),
 
                     onPressed: () {
@@ -229,7 +230,7 @@ class _Quiz1State extends State<Quiz1> {
               Container(
                 alignment: Alignment.bottomCenter,
                 child: MaterialButton(
-                  color: Colors.red,
+                  color: Color(0xFFFF8888),
                   minWidth: 240.0,
                   height: 40.0,
                   onPressed: resetQuiz,
@@ -311,7 +312,7 @@ class Summary extends StatelessWidget {
 
                        */
                         child: MaterialButton(
-                          color: Colors.red,
+                          color: Color(0xFFFF8888),
                           minWidth: 240.0,
                           height: 40.0,
                           onPressed: () {
