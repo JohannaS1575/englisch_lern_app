@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -30,8 +31,14 @@ class _DetailScreenState extends State<DetailScreen> {
           Stack(
             children: [
               Container(
-                height: MediaQuery.of(context).size.height - 82.0,
-                width: MediaQuery.of(context).size.width,
+                height: MediaQuery
+                    .of(context)
+                    .size
+                    .height - 82.0,
+                width: MediaQuery
+                    .of(context)
+                    .size
+                    .width,
                 color: Colors.transparent,
               ),
               Positioned(
@@ -44,8 +51,14 @@ class _DetailScreenState extends State<DetailScreen> {
                     ),
                     color: Colors.white,
                   ),
-                  height: MediaQuery.of(context).size.height - 100.0,
-                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery
+                      .of(context)
+                      .size
+                      .height - 100.0,
+                  width: MediaQuery
+                      .of(context)
+                      .size
+                      .width,
                 ),
               ),
 
@@ -66,11 +79,12 @@ class _DetailScreenState extends State<DetailScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Text("Im Deutschen nennen wir diese Zeitform\nPräsens oder einfache Gegenwart.\n"
-                            "Mit dem Simple Present werden Handlungen\nin der Gegenwart ausgedrückt, die regelmäßig oder\nwiederholt stattfinden, nacheinander ablaufen,\nallgemeine Gültigkeit besitzen oder z.B. durch einen\nFahrplan festgelegt sind.",
+                        Text(
+                            "Im Deutschen nennen wir diese Zeitform\nPräsens oder einfache Gegenwart.\n"
+                                "Mit dem Simple Present werden Hand-\nlungen in der Gegenwart ausgedrückt,\ndie regelmäßig oder wiederholt stattfinden,\nnacheinander ablaufen, allgemeine\nGültigkeit besitzen oder z.B.\ndurch einen Fahrplan festgelegt sind.",
                             style: TextStyle(
                                 fontFamily: 'Montserrat',
-                                fontSize: 14.0,
+                                fontSize: 18.0,
                                 color: Colors.black54)),
                       ],
 
@@ -80,18 +94,20 @@ class _DetailScreenState extends State<DetailScreen> {
                   ],
                 ),
               ),
+
+
               Positioned(
                 top: 300.0,
                 left: 30.0,
                 child: Container(
-                  height: 250.0,
+                  height: 200.0,
                   width: 350.0,
                   padding: EdgeInsets.all(15.0),
                   decoration: BoxDecoration(
                     border: Border.all(
                         color: Color(0xFFFFBF84),
                         style: BorderStyle.solid,
-                        width: 1.0),
+                        width: 2.0),
                     borderRadius: BorderRadius.circular(10.0),
                   ),
 
@@ -106,12 +122,13 @@ class _DetailScreenState extends State<DetailScreen> {
                               fontSize: 18.0)),
 
                       SizedBox(width: 30.0, height: 35.0,),
-                      Text('Positiv: He says \n\n Negativ: He does not say \n\n Frage: Does he say?',
+                      Text(
+                          'Positiv: He says \n\n Negativ: He does not say \n\n Frage: Does he say?',
                           textAlign: TextAlign.left,
                           style: TextStyle(
                               fontFamily: 'Montserrat',
-                              color:Colors.black54,
-                              fontSize: 15.0
+                              color: Colors.black54,
+                              fontSize: 16.0
                           ))
                     ],
 
@@ -128,6 +145,6 @@ class _DetailScreenState extends State<DetailScreen> {
 
       ),
     );
-
   }
 }
+
