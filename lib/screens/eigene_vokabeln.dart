@@ -34,7 +34,7 @@ class _VokListState extends State<VokList> {
                       alignment: Alignment.center,
                       icon: Icon(Icons.delete),
                       onPressed: () async {
-                        _deleteVok(snapshot.data[index]);
+                        _deleteVok(context, snapshot.data[index]);
                         setState(() {});
                       }),
                 );
@@ -48,17 +48,35 @@ class _VokListState extends State<VokList> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/addtableentry');
+          _navigateToCreateVok(context);
         },
         child: Icon(Icons.add),
       ),
     );
   }
+
+  //Nutzung für die Navigation zur add-entry screen
+// awaits results from Navigator.pop
+  _navigateToCreateVok(BuildContext context) async {
+    // Navigator.push returns a Future that completes after calling
+    // Navigator.pop on the Selection Screen.
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => addVok()),
+    );
+    Scaffold.of(context).showSnackBar(SnackBar(content: Text("$result")));
+  }
 }
 
 
-_deleteVok(vokEntries entries) {
+
+
+_deleteVok(BuildContext context, vokEntries entries) {
   DatabaseHelper.instance.deleteEntry(entries.id);
+  Scaffold.of(context).showSnackBar(SnackBar(
+    content: Text("Du hast eine Vokabel gelöscht"),
+    //duration: 3 ,
+  ));
 }
 
 _navigateToDetail(BuildContext context, vokEntries entries ) async {
@@ -67,3 +85,5 @@ _navigateToDetail(BuildContext context, vokEntries entries ) async {
     MaterialPageRoute(builder: (context) => addVok(entries: entries,)),
   );
 }
+
+

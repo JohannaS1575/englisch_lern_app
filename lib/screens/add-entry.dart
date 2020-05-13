@@ -76,7 +76,7 @@ class _addVokState extends State<addVok> {
               SizedBox(height: 10),
               deTextfield(),
               SizedBox(height: 10),
-              koTextfield()
+              //koTextfield()
             ],
           ),
         ),
@@ -101,7 +101,7 @@ class _addVokState extends State<addVok> {
       await DatabaseHelper.instance
           .updateEntry(
           vokEntries(id: entries.id, vok_en: en, vok_de: de, vok_ko: ko));
-      Navigator.pop(context);
+      Navigator.pop(context, "Deine Vokabel wurde geändert");
     }
   }
 }
